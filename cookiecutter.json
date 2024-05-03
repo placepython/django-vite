@@ -1,7 +1,7 @@
 {
     "django_project_name": "example",
     "frontend_dirname": "frontend",
-    "static_dirpath": "{{ cookiecutter.django_project_name }}/static/",
+    "static_dirpath": "{{{ cookiecutter.django_project_name }}}/static/",
     "use_stimulus": false,
     "use_htmx": false,
     "use_alpinejs": false,
