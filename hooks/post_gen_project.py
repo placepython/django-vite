@@ -21,7 +21,7 @@ def main():
     remove_bootstrap_files(){{% endif %}}
 
     {{%- if not cookiecutter.use_tailwindcss %}}
-    remove_tailwind_files(){% endif %}
+    remove_tailwind_files(){{% endif %}}
 
     {{%- if not cookiecutter.use_stimulus %}}
     remove_controllers_folder(){{% endif %}}
