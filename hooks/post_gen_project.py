@@ -14,16 +14,16 @@ def remove_controllers_folder():
 
 
 def main():
-    {%- if cookiecutter.use_bootstrap %}
-    Path("src/styles/app.css").resolve().unlink(){% endif %}
+    {{%- if cookiecutter.use_bootstrap %}}
+    Path("src/styles/app.css").resolve().unlink(){{% endif %}}
 
-    {%- if not cookiecutter.use_bootstrap %}
-    remove_bootstrap_files(){% endif %}
+    {{%- if not cookiecutter.use_bootstrap %}}
+    remove_bootstrap_files(){{% endif %}}
 
-    {%- if not cookiecutter.use_tailwindcss %}
+    {{%- if not cookiecutter.use_tailwindcss %}}
     remove_tailwind_files(){% endif %}
 
-    {%- if not cookiecutter.use_stimulus %}
-    remove_controllers_folder(){% endif %}
+    {{%- if not cookiecutter.use_stimulus %}}
+    remove_controllers_folder(){{% endif %}}
 
 main()
