@@ -10,6 +10,11 @@ import * as bootstrap from 'bootstrap';{{% endif %}}
 // Importation and configuration of Hotwired Stimulus
 import "../controllers";{{% endif %}}
 
+{{%- if cookiecutter.use_turbo %}}
+
+// Importation and configuration of Hotwired Turbo
+import * as Turbo from "@hotwired/turbo";{{% endif %}}
+
 {{%- if cookiecutter.use_htmx %}}
 
 // Importation and configuration of HTMX

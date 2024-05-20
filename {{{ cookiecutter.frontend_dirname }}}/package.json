@@ -6,27 +6,29 @@
   "devDependencies": {
     {{%- if cookiecutter.use_stimulus %}}
     "@hotwired/stimulus": "^3.2.2",{{% endif %}}
+    {{% if cookiecutter.use_turbo %}}
+    "@hotwired/turbo": "^8.0.4",{{% endif %}}
     {{%- if cookiecutter.use_bootstrap %}}
     "@popperjs/core": "^2.11.8",{{% endif %}}
     {{%- if cookiecutter.use_alpinejs %}}
-    "alpinejs": "^3.13.3",{{% endif %}}
-    "autoprefixer": "^10.4.16",
+    "alpinejs": "^3.13.10",{{% endif %}}
+    "autoprefixer": "^10.4.19",
     {{%- if cookiecutter.use_bootstrap %}}
-    "bootstrap": "^5.3.2",{{% endif %}}
-    "glob": "^10.3.10",
+    "bootstrap": "^5.3.3",{{% endif %}}
+    "glob": "^10.3.15",
     {{%- if cookiecutter.use_htmx %}}
-    "htmx.org": "^1.9.9",{{% endif %}}
-    "postcss": "^8.4.31",
+    "htmx.org": "^1.9.12",{{% endif %}}
+    "postcss": "^8.4.38",
     {{%- if cookiecutter.use_tailwindcss %}}
-    "postcss-import": "^15.1.0",
-    "postcss-preset-env": "^9.3.0",{{% endif %}}
+    "postcss-import": "^16.1.0",
+    "postcss-preset-env": "^9.5.13",{{% endif %}}
     {{%- if cookiecutter.use_bootstrap %}}
-    "sass": "^1.69.5",{{% endif %}}
+    "sass": "^1.77.2",{{% endif %}}
     {{%- if cookiecutter.use_stimulus %}}
-    "stimulus-vite-helpers": "^3.0.1",{{% endif %}}
+    "stimulus-vite-helpers": "^3.1.0",{{% endif %}}
     {{%- if cookiecutter.use_tailwindcss %}}
-    "tailwindcss": "^3.3.5",{{% endif %}}
-    "vite": "^4.4.11"
+    "tailwindcss": "^3.4.3",{{% endif %}}
+    "vite": "^5.2.11"
     {{%- if cookiecutter.use_stimulus %}},
     "vite-plugin-stimulus-hmr": "^3.0.0"{{% endif %}}
   }

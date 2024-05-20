@@ -2,8 +2,7 @@
 module.exports = {
   content: [
     "./src/**/*.js",
-    "../.venv/**/crispy_tailwind/**/*.html",
-    "../**/templates/**/*.html",
+    "{{{ cookiecutter.django_base_dir.rstrip('\\/') }}}/**/templates/**/*.html",
   ],
   theme: {
     extend: {},

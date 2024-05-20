@@ -47,10 +47,10 @@ export default defineConfig({
     open: false,
   },
   build: {
-    outDir: path.resolve(__dirname, "../{{{ cookiecutter.static_dirpath }}}"),
+    outDir: path.resolve(__dirname, "{{{ cookiecutter.static_dir }}}"),
     manifest: true,
     emptyOutDir: true,
-    target: "es2015",
+    target: "modules",
     rollupOptions: {
       input: getInputObject(),
       output: {
