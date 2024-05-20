@@ -10,7 +10,7 @@ def remove_tailwind_files():
     Path("tailwind.config.js").resolve().unlink()
 
 def remove_controllers_folder():
-    shutil.rmtree("../{{ cookiecutter.frontend_dirname }}/src/controllers")
+    shutil.rmtree("src/controllers")
 
 
 def main():
