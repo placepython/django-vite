@@ -1,12 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.js",
-    "{{{ cookiecutter.django_base_dir.rstrip('\\/') }}}/**/templates/**/*.html",
+    "{{{ cookiecutter.django_base_dir.rstrip('\\/') }}}/**/src/**/*.{js,css,scss,html}",
+    "{{{ cookiecutter.django_base_dir.rstrip('\\/') }}}/**/templates/**/*.{js,css,scss,html}"
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [{{% if cookiecutter.use_daisyui %}}
+    require('daisyui'),
+  {{% endif %}}],
 }
 

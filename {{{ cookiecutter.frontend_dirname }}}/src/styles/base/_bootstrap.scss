@@ -6,6 +6,7 @@
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
 
+// Add colors new colors in $custom-colors
 $custom-colors: () !default;
 $theme-colors: map-merge($theme-colors, $custom-colors);
 

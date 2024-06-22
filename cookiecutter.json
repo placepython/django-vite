@@ -1,23 +1,23 @@
 {
     "frontend_dirname": "frontend",
     "django_base_dir": "../",
-    "static_dir": "{{{ cookiecutter.django_base_dir.rstrip('\\/') }}}/static/",
     "use_stimulus": false,
     "use_turbo": false,
     "use_htmx": false,
     "use_alpinejs": false,
+    "use_daisyui": false,
     "use_tailwindcss": false,
     "use_bootstrap": false,
     "__prompts__": {
         "frontend_dirname": "Name of your frontend folder (no space)",
-        "django_base_dir": "Base directory of your Django project (relative to the frontend folder)",
-        "static_dir": "Path to your static folder (relative to the frontend folder)",
+        "django_base_dir": "Base directory of your Django project (relative to the frontend folder or absolute)",
         "use_stimulus": "Would you like to use the Hotwire Stimulus javascript library ?",
         "use_turbo": "Would you like to use the Hotwire Turbo javascript library ?",
         "use_htmx": "Would you like to use HTMX in your project ?",
         "use_alpinejs": "Would you like to use Alpine.js in your project ?",
-        "use_tailwindcss": "Would you like to use Tailwind for your CSS ?",
-        "use_bootstrap": "Would you like to use Bootstrap 5 for your CSS ?"
+        "use_daisyui": "Would you like to use DaisyUI for CSS components (need TailwindCSS) ?",
+        "use_tailwindcss": "Would you like to use TailwindCSS ?",
+        "use_bootstrap": "Would you like to use Bootstrap 5 (Cannot be used with TailwindCSS) ?"
     },
     "_jinja2_env_vars": {
         "block_start_string": "{{%",

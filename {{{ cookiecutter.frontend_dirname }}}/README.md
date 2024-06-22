@@ -30,23 +30,34 @@ To generate your static files for deployment, use the command `$ npm run build`.
 
 On the django side, using the django-vite package is a valuable option. You can install it using pipenv (or pip if you prefer) like this:
 
+```bash
+$ pip install django-vite
 ```
+or 
+```bash
 $ pipenv install django-vite
 ```
 
 Once installed, add `django_vite` in the INSTALLED_APPS list of your django settings. Then, configure it using the
 DJANGO_VITE variable in your settings:
 
-```
+```python
 DJANGO_VITE = {
     "default": {
         "dev_mode": DEBUG,
-        "dev_server_port": 5173,
     },
 }
 ```
 
-You can use django-vite to reference your assets in your django templates:
+Then add the <path to frontend>/dist/ folder to the STATICFILES_DIRS:
+
+```python
+STATICFILES_DIRS = [
+    BASE_DIR / "frontend" / "dist"
+]
+```
+
+In your templates, you need to use django-vite to reference your assets:
 
 ```
 {% load django_vite %}
@@ -59,12 +70,20 @@ You can use django-vite to reference your assets in your django templates:
     <title>Page title</title>
 
     {% vite_hmr_client %}
+    {# path of your vite assets are relative to the frontend directory #}
     {% vite_asset 'src/application/app.js' %}
 </head>
 <body>
     ...
 </body>
 </html>
+```
+
+You can also use the `{% vite_asset_url %}` tag to get the get the url of a static
+ressource handled by vite:
+
+```html
+<img src="{% vite_asset_url 'path/to/my/image.png' %}" alt="the python logo" />
 ```
 
 For more information on django-vite, feel free to read the [offical README for the project](https://github.com/MrBin99/django-vite/blob/3.0.0/README.md).
