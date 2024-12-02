@@ -54,6 +54,7 @@ Then add the <path to frontend>/dist/ folder to the STATICFILES_DIRS:
 ```python
 STATICFILES_DIRS = [
     BASE_DIR / "frontend" / "dist"
+    BASE_DIR / "frontend" / "public"
 ]
 ```
 
@@ -71,7 +72,7 @@ In your templates, you need to use django-vite to reference your assets:
 
     {% vite_hmr_client %}
     {# path of your vite assets are relative to the frontend directory #}
-    {% vite_asset 'src/application/app.js' %}
+    {% vite_asset 'src/index.js' %}
 </head>
 <body>
     ...

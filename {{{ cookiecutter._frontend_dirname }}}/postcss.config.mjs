@@ -1,5 +1,5 @@
 {{%- if cookiecutter.use_tailwindcss -%}}
-module.exports = {
+export default {
   plugins: {
     "postcss-import": {},
     "tailwindcss/nesting": {},
@@ -10,7 +10,7 @@ module.exports = {
   },
 };
 {{%- else -%}}
-module.exports = {
+export default {
   plugins: {
     autoprefixer: {}
   },

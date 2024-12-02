@@ -8,7 +8,7 @@ import * as bootstrap from 'bootstrap';{{% endif %}}
 {{%- if cookiecutter.use_stimulus %}}
 
 // Importation and configuration of Hotwired Stimulus
-import "../controllers";{{% endif %}}
+import "./controllers";{{% endif %}}
 
 {{%- if cookiecutter.use_turbo %}}
 
@@ -31,8 +31,8 @@ Alpine.start();{{% endif %}}
 {{%- if cookiecutter.use_bootstrap %}}
 
 // Entry point for SCSS styles
-import "../styles/app.scss";
+import "./styles/app.scss";
 {{%- else %}}
 
 // Entry point for CSS styles
-import "../styles/app.css";{{% endif %}}
+import "./styles/app.css";{{% endif %}}
