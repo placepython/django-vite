@@ -10,6 +10,12 @@ This project uses **cookiecutter** to handle the code generation task from the t
 $ pip install cookiecutter
 ```
 
+You can also use cookiecutter without installing it with uv and the following command:
+
+```
+$ uvx cookiecutter <your cookiecutter command>
+```
+
 You will also need npm to install frontend dependencies. Hence, this project requires you to install Node.js globally on your computer. You can do this by [downloading the appropriate installer](https://nodejs.org/en/download/current) for your operating system (recommended for beginners), or using a node version manager like nvm. 
 
 ## Creating the frontend folder
