@@ -60,7 +60,7 @@ STATICFILES_DIRS = [
 
 In your templates, you need to use django-vite to reference your assets:
 
-```
+```html
 {% load django_vite %}
 
 <!DOCTYPE html>
@@ -80,11 +80,12 @@ In your templates, you need to use django-vite to reference your assets:
 </html>
 ```
 
-You can also use the `{% vite_asset_url %}` tag to get the get the url of a static
-ressource handled by vite:
+In order to use the files listed in the public directory, use the `static` tag :
 
 ```html
-<img src="{% vite_asset_url 'path/to/my/image.png' %}" alt="the python logo" />
+{% load static %}
+
+<img src="{% static 'images/python.png' %}" alt="the python logo" />
 ```
 
 For more information on django-vite, feel free to read the [offical README for the project](https://github.com/MrBin99/django-vite/blob/3.0.0/README.md).
@@ -135,3 +136,20 @@ The middleware should be listed after any others that encode the response, such 
 
 The middleware automatically inserts the required script tag on HTML responses before </body> when DEBUG is True. It does so to every HTML response, meaning it will be included on Django’s debug pages, admin pages, etc. If you want more control, you can instead insert the script tag in your templates (see the official documentation).
 
+## Using django-vite with docker
+You have two choices for the developmenet, either build the assets directly in the django container or use a node container exposing the vite server (port 5173 by default). 
+
+The first option is simpler, but you will need to rebuild the container each time you change the frontend code.
+
+If using the second option, you will need to change the dev server host in the `vite.config.js` file to allow the vite server to be accessed from the django container :
+
+```mjs
+export default defineConfig({
+    base: "/static/",
+    server: {
+        host: "0.0.0.0",
+    },
+    [...]
+})
+```
+Inspiration for setting up vite with docker can be found in the [cookiecutter-django](https://github.com/cookiecutter/cookiecutter-django).
