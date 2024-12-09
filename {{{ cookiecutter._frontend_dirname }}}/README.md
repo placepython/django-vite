@@ -4,11 +4,11 @@ This folder manage the construction of your static assets using the Vite build t
 
 ## Node.js
 
-As a prerequisite, you will need npm to install frontend your dependencies and launch the commands. Hence, building your frontend static assets using this folder requires you to install Node.js globally on your computer. You can do this by [downloading the appropriate installer](https://nodejs.org/en/download/current) for your operating system. This is the very first step of your journey.
+As a prerequisite, you will need npm to install your frontend dependencies and launch the commands. Hence, building your frontend static assets using this folder requires you to install Node.js globally on your computer. You can do this by [downloading the appropriate installer](https://nodejs.org/en/download/current) for your operating system. This is the very first step of your journey.
 
 ## Installing your project frontend dependencies
 
-The first step to build your static files is to install frontend dependencies in the current folder. The npm package management has been designed exactly for this task. It will be used to install all the tools and libraries listed in your package.json package-lock.json files. 
+The first step to build your static files is to install frontend dependencies in the current folder. The npm package management tool (installed with Node.js) has been designed exactly for this task. It will be used to install all the tools and libraries listed in your package.json and package-lock.json files. 
 
 Execute the following command to create automatically a node_modules subfolder with all your project frontend dependencies inside:
 
@@ -28,14 +28,10 @@ To generate your static files for deployment, use the command `$ npm run build`.
 
 ## Use Django-vite in your Django project
 
-On the django side, using the django-vite package is a valuable option. You can install it using pipenv (or pip if you prefer) like this:
+On the django side, using the django-vite package is a valuable option. You can install it using pip (or pipenv/poetry/uv if you prefer) like this:
 
 ```bash
 $ pip install django-vite
-```
-or 
-```bash
-$ pipenv install django-vite
 ```
 
 Once installed, add `django_vite` in the INSTALLED_APPS list of your django settings. Then, configure it using the
@@ -49,7 +45,7 @@ DJANGO_VITE = {
 }
 ```
 
-Then add the <path to frontend>/dist/ folder to the STATICFILES_DIRS:
+Then add the path to frontend dist and public folders to the STATICFILES_DIRS configuration variable:
 
 ```python
 STATICFILES_DIRS = [
@@ -85,19 +81,20 @@ In order to use the files listed in the public directory, use the `static` tag :
 ```html
 {% load static %}
 
+{# The image bellow is located in frontend/public/images/python.png #}
 <img src="{% static 'images/python.png' %}" alt="the python logo" />
 ```
 
-For more information on django-vite, feel free to read the [offical README for the project](https://github.com/MrBin99/django-vite/blob/3.0.0/README.md).
+For more information on django-vite, feel free to read the [offical README for the project](https://github.com/MrBin99/django-vite/blob/3.0.5/README.md).
 
 ## Using django-browser-reload to refresh your web browser
 
-Vite is very smart in refreshing your web browser with javascript or CSS code changes in the current folder. If you want to issue an automatic refresh also when your templates or views are modified, the [django-browser-reload package](https://github.com/adamchainz/django-browser-reload) is a valuable and simple option.
+Vite is very smart in refreshing your web browser when javascript or CSS code changes in the frontend folder. If you want to issue an automatic refresh also when your templates are modified on the django site, the [django-browser-reload package](https://github.com/adamchainz/django-browser-reload) is a valuable and simple option.
 
-You can install django-browser-reload as simply using pipenv (or pip if you prefer):
+You can install django-browser-reload as simply using pip (or pipenv/poetry/uv if you prefer):
 
 ```
-$ pipenv install django-browser-reload
+$ pip install django-browser-reload
 ```
 
 The [documentation of this package](https://github.com/adamchainz/django-browser-reload/blob/main/README.rst) provide good explanations about the configuration in your django settings file.
@@ -113,7 +110,14 @@ INSTALLED_APPS = [
     ...,
 ]
 ```
-3. Include the app URLs in your root URLconf:
+3. Add the middleware:
+```python
+MIDDLEWARE = [
+    # ...
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
+    # ...
+]
+4. Include the app URLs in your root URLconf:
 ```python
 from django.urls import include, path
 
@@ -124,13 +128,6 @@ urlpatterns = [
 ```
 You can use another prefix if required.
 
-5. Add the middleware:
-```python
-MIDDLEWARE = [
-    # ...
-    "django_browser_reload.middleware.BrowserReloadMiddleware",
-    # ...
-]
 ```
 The middleware should be listed after any others that encode the response, such as Django’s GZipMiddleware.
 
