@@ -12,7 +12,7 @@ The first step to build your static files is to install frontend dependencies in
 
 Execute the following command to create automatically a node_modules subfolder with all your project frontend dependencies inside:
 
-```
+```bash
 $ npm install
 ```
 
@@ -149,4 +149,4 @@ export default defineConfig({
     [...]
 })
 ```
-Inspiration for setting up vite with docker can be found in the [cookiecutter-django](https://github.com/cookiecutter/cookiecutter-django).
+Inspiration for setting up the Node container for the vite server can be found in the [cookiecutter-django](https://github.com/cookiecutter/cookiecutter-django), particularly in the node and django Dockerfiles, as well as the local development docker-compose file.
