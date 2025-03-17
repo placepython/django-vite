@@ -13,14 +13,14 @@
     "@popperjs/core": "^2.11.8",{{% endif %}}
     {{%- if cookiecutter.use_alpinejs %}}
     "alpinejs": "^3.14.9",{{% endif %}}
-    "autoprefixer": "^10.4.21",
     {{%- if cookiecutter.use_bootstrap %}}
-    "bootstrap": "^5.3.3",{{% endif %}}
+    "bootstrap": "^5.3.3",
+    "postcss": "^8.5.3",
+    "autoprefixer": "^10.4.21",{{% endif %}}
     {{%- if cookiecutter.use_daisyui %}}
     "daisyui": "^5.0.6",{{% endif %}}
     {{%- if cookiecutter.use_htmx %}}
     "htmx.org": "^2.0.3",{{% endif %}}
-    "postcss": "^8.5.3",
     {{%- if cookiecutter.use_bootstrap %}}
     "sass": "^1.85.1",{{% endif %}}
     {{%- if cookiecutter.use_stimulus %}}
