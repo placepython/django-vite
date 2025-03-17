@@ -9,8 +9,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [{{% if cookiecutter.use_daisyui %}}
-    require('daisyui'),
-  {{% endif %}}],
 }
 
