@@ -45,12 +45,19 @@ DJANGO_VITE = {
 }
 ```
 
-Then add the path to frontend dist and public folders to the STATICFILES_DIRS configuration variable:
+Then add the path to the frontend public folder to the dev STATICFILES_DIRS configuration variable:
+
+```python
+STATICFILES_DIRS = [
+    BASE_DIR / "frontend" / "public"
+]
+```
+
+and the path to the frontend dist folder to the production STATICFILES_DIRS configuration variable:
 
 ```python
 STATICFILES_DIRS = [
     BASE_DIR / "frontend" / "dist"
-    BASE_DIR / "frontend" / "public"
 ]
 ```
 
@@ -68,7 +75,7 @@ In your templates, you need to use django-vite to reference your assets:
 
     {% vite_hmr_client %}
     {# path of your vite assets are relative to the frontend directory #}
-    {% vite_asset 'src/index.js' %}
+    {% vite_asset 'src/main.js' %}
 </head>
 <body>
     ...

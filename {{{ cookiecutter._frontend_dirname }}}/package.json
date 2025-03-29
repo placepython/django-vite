@@ -2,33 +2,37 @@
   "type": "module",
   "scripts": {
     "start": "vite",
+    "dev": "vite",
     "build": "vite build"
   },
   "devDependencies": {
+    "vite": "^6.2.3"
     {{%- if cookiecutter.use_stimulus %}}
-    "@hotwired/stimulus": "^3.2.2",{{% endif %}}
-    {{% if cookiecutter.use_turbo %}}
-    "@hotwired/turbo": "^8.0.13",{{% endif %}}
-    {{%- if cookiecutter.use_bootstrap %}}
-    "@popperjs/core": "^2.11.8",{{% endif %}}
-    {{%- if cookiecutter.use_alpinejs %}}
-    "alpinejs": "^3.14.9",{{% endif %}}
-    {{%- if cookiecutter.use_bootstrap %}}
+    "@hotwired/stimulus": "^3.2.2"{{% endif %}}
+    {{%- if cookiecutter.use_turbo %}},
+    "@hotwired/turbo": "^8.0.13"{{% endif %}}
+    {{%- if cookiecutter.use_bootstrap %}},
+    "@popperjs/core": "^2.11.8"{{% endif %}}
+    {{%- if cookiecutter.use_alpinejs %}},
+    "alpinejs": "^3.14.9"{{% endif %}}
+    {{%- if cookiecutter.use_bootstrap %}},
     "bootstrap": "^5.3.3",
     "postcss": "^8.5.3",
-    "autoprefixer": "^10.4.21",{{% endif %}}
-    {{%- if cookiecutter.use_daisyui %}}
-    "daisyui": "^5.0.6",{{% endif %}}
-    {{%- if cookiecutter.use_htmx %}}
-    "htmx.org": "^2.0.3",{{% endif %}}
-    {{%- if cookiecutter.use_bootstrap %}}
-    "sass": "^1.85.1",{{% endif %}}
-    {{%- if cookiecutter.use_stimulus %}}
-    "stimulus-vite-helpers": "^3.1.0",{{% endif %}}
-    {{%- if cookiecutter.use_tailwindcss %}}
-    "tailwindcss": "^4.0.14",
-    "vite": "^6.2.2",
-    "@tailwindcss/vite": "^4.0.14"{{% endif %}}
+    "autoprefixer": "^10.4.21"{{% endif %}}
+    {{%- if cookiecutter.use_daisyui %}},
+    "daisyui": "^5.0.9"{{% endif %}}
+    {{%- if cookiecutter.use_htmx %}},
+    "htmx.org": "^2.0.4"{{% endif %}}
+    {{%- if cookiecutter.use_bootstrap %}},
+    "sass": "^1.86.0"{{% endif %}}
+    {{%- if cookiecutter.use_stimulus %}},
+    "stimulus-vite-helpers": "^3.1.0"{{% endif %}}
+    {{%- if cookiecutter.use_tailwindcss %}},
+    "tailwindcss": "^4.0.17"{{% endif %}}
+    {{%- if cookiecutter.use_tailwindcss %}},
+    "@tailwindcss/vite": "^4.0.17"{{% endif %}}
+    {{%- if cookiecutter.use_tailwind_typography %}},
+    "@tailwindcss/typography": "^0.5.16"{{% endif %}}
     {{%- if cookiecutter.use_stimulus %}},
     "vite-plugin-stimulus-hmr": "^3.0.0"{{% endif %}}
   }

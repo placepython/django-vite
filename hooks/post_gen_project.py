@@ -5,7 +5,7 @@ import shutil
 def remove_bootstrap_files():
     shutil.rmtree("src/styles/base")
     Path("src/styles/app.scss").resolve().unlink()
-    Path("src/postcss.config.mjs").resolve().unlink()
+    Path("./postcss.config.mjs").resolve().unlink()
 
 def remove_tailwind_files():
     Path("tailwind.config.js").resolve().unlink()
