@@ -7,7 +7,7 @@
   },
   "devDependencies": {
     "vite": "^6.2.3"
-    {{%- if cookiecutter.use_stimulus %}}
+    {{%- if cookiecutter.use_stimulus %}},
     "@hotwired/stimulus": "^3.2.2"{{% endif %}}
     {{%- if cookiecutter.use_turbo %}},
     "@hotwired/turbo": "^8.0.13"{{% endif %}}
