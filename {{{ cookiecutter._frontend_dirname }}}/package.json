@@ -33,7 +33,5 @@
     "@tailwindcss/vite": "^4.0.17"{{% endif %}}
     {{%- if cookiecutter.use_tailwind_typography %}},
     "@tailwindcss/typography": "^0.5.16"{{% endif %}}
-    {{%- if cookiecutter.use_stimulus %}},
-    "vite-plugin-stimulus-hmr": "^3.0.0"{{% endif %}}
   }
 }
