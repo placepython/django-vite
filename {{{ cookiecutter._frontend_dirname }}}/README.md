@@ -45,21 +45,8 @@ DJANGO_VITE = {
 }
 ```
 
-Then add the path to the frontend public folder to the dev STATICFILES_DIRS configuration variable:
+When building for production, the static files will be stored in BASE_DIR/frontend/dist. Add the path to your production STATICFILES_DIRS.
 
-```python
-STATICFILES_DIRS = [
-    BASE_DIR / "frontend" / "public"
-]
-```
-
-and the path to the frontend dist folder to the production STATICFILES_DIRS configuration variable:
-
-```python
-STATICFILES_DIRS = [
-    BASE_DIR / "frontend" / "dist"
-]
-```
 
 In your templates, you need to use django-vite to reference your assets:
 
@@ -83,16 +70,16 @@ In your templates, you need to use django-vite to reference your assets:
 </html>
 ```
 
-In order to use the files listed in the public directory, use the `static` tag :
+In order to use the files listed in the public directory, use the `vite_asset_url` tag :
 
 ```html
 {% load static %}
 
 {# The image bellow is located in frontend/public/images/python.png #}
-<img src="{% static 'images/python.png' %}" alt="the python logo" />
+<img src="{% vite_asset_url 'images/python.png' %}" alt="the python logo" />
 ```
 
-For more information on django-vite, feel free to read the [offical README for the project](https://github.com/MrBin99/django-vite/blob/3.0.5/README.md).
+For more information on django-vite, feel free to read the [offical README for the project](https://github.com/MrBin99/django-vite/blob/3.1.0/README.md).
 
 ## Using django-browser-reload to refresh your web browser
 
