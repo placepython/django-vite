@@ -1,6 +1,6 @@
 {{%- if cookiecutter.use_tailwindcss -%}}
-@import "tailwindcss" source("../../src/");
-@source "../../{{{ cookiecutter.django_base_dir.rstrip('\\/') }}}/**/templates/**/*.html";{{% endif %}}
+@import "tailwindcss" source("../");
+@source "../../../**/templates/**/*.html";{{% endif %}}
 {{%- if cookiecutter.use_crispy_tailwind %}}
 @source "../../{{{ cookiecutter.venv_base_dir.rstrip('\\/') }}}/**/crispy_forms/**/*.{html,py,js,css}";{{% endif %}}
 {{%- if cookiecutter.use_daisyui %}}
