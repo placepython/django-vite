@@ -2,7 +2,7 @@
 @import "tailwindcss" source("../");
 @source "../../../**/templates/**/*.html";{{% endif %}}
 {{%- if cookiecutter.use_crispy_tailwind %}}
-@source "../../{{{ cookiecutter.venv_base_dir.rstrip('\\/') }}}/**/crispy_forms/**/*.{html,py,js,css}";{{% endif %}}
+@source "../../../{{{ cookiecutter.venv_base_dir.rstrip('\\/') }}}/**/crispy_forms/**/*.{html,py,js,css}";{{% endif %}}
 {{%- if cookiecutter.use_daisyui %}}
 @plugin "daisyui";{{% endif %}}
 {{%- if cookiecutter.use_tailwind_typography %}}
