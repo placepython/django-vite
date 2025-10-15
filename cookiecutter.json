@@ -11,7 +11,7 @@
     "use_crispy_tailwind": false,
     "use_bootstrap": false,
     "__prompts__": {
-        "venv_base_dir": "Base directory of your venv (relative to the frontend folder or absolute)",
+        "venv_base_dir": "Base directory of your venv (relative to the root of your django project)",
         "use_stimulus": "Would you like to use the Hotwire Stimulus javascript library ?",
         "use_turbo": "Would you like to use the Hotwire Turbo javascript library ?",
         "use_htmx": "Would you like to use HTMX in your project ?",
