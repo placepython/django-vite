@@ -1,7 +1,6 @@
 {
     "_frontend_dirname": "frontend",
-    "django_base_dir": "../",
-    "venv_base_dir": "../.venv/",
+    "venv_base_dir": ".venv",
     "use_stimulus": false,
     "use_turbo": false,
     "use_htmx": false,
@@ -12,7 +11,6 @@
     "use_crispy_tailwind": false,
     "use_bootstrap": false,
     "__prompts__": {
-        "django_base_dir": "Base directory of your Django project (relative to the frontend folder or absolute)",
         "venv_base_dir": "Base directory of your venv (relative to the frontend folder or absolute)",
         "use_stimulus": "Would you like to use the Hotwire Stimulus javascript library ?",
         "use_turbo": "Would you like to use the Hotwire Turbo javascript library ?",
